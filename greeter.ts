@@ -1,13 +1,22 @@
-interface Person {
-	firstName: string,
-	lastName: string
+class Jedi {
+	constructor(public speciesType: string, public speciesName: string, public speciesAlignment: string){
+	}
 }
 
-function greeter(person: Person){
-return `Hello, ${person.firstName} ${person.lastName}! Nice to see you.`
+interface Species {
+	speciesAlignment: string,
+	speciesType: string,
+	speciesName: string
+
 }
 
+let AnakinSkywalker = new Jedi('Human',"Anakin Skywalker","light")
+console.log(newJedi(AnakinSkywalker,"blue"))
 
-let user = { firstName: "Santa", lastName: "Claus" }
+function newJedi (species: Species, lightsaberColor: string) {
+	return `Welcome, young Padawan! You are a ${species.speciesType} called ${species.speciesName} and are hopefully on the ${species.speciesAlignment} side of the force! You may now use your ${lightsaberColor} ligthsaber. May it be with you!`
+}
 
-console.log(greeter(user))
+let ObiWan = new Jedi("Human","Obi Wan Kenobi","light")
+
+console.log(newJedi(ObiWan,"blue"))
